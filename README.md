@@ -53,6 +53,28 @@ cd site && python -m http.server 8000
 
 之后每次 Actions 提交新数据，Vercel 会自动重新部署。
 
+## 开启每日自动采集（需要你手动做一步）
+
+自动化工作流文件放在 `docs/collect-workflow.yml`，**没有**放在 `.github/workflows/`。
+原因是本机 GitHub 授权缺少 `workflow` scope，push 工作流文件会被 GitHub 拒绝。
+
+两种方式补上，任选其一：
+
+**方式 A（推荐，30 秒）**：打开仓库 → **Add file → Create new file** → 路径填
+`.github/workflows/collect.yml` → 把 `docs/collect-workflow.yml` 的内容粘进去 → Commit。
+
+**方式 B（命令行）**：
+
+```bash
+gh auth refresh -s workflow      # 会打开浏览器完成授权
+mkdir -p .github/workflows
+cp docs/collect-workflow.yml .github/workflows/collect.yml
+git add .github && git commit -m "ci: add collector workflow" && git push
+```
+
+完成后每天 UTC 03:00 / 15:00（太平洋时间早晚各一次）自动采集并提交数据。
+也可以随时在仓库 **Actions → Collect quantum releases → Run workflow** 手动触发。
+
 ## 已知边界（诚实清单）
 
 - **企业库是种子数据**：当前 48 家覆盖主要玩家，全球量子初创约 400+ 家，持续扩充中
