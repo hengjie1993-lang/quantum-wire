@@ -1,0 +1,42 @@
+name: Collect quantum releases
+
+on:
+  # 采集脚本变更时立即跑一次，保证仓库里始终有数据
+  push:
+    branches: [main]
+    paths: ["scripts/**", ".github/workflows/**"]
+  schedule:
+    # 每天两次：UTC 03:00 / 15:00，对应太平洋时间早晚各一次（夏令时差 1 小时）
+    - cron: "0 3,15 * * *"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "回溯天数"
+        default: "30"
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run collector
+        run: python scripts/collect.py --days ${{ github.event.inputs.days || '30' }}
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data/items.json site/data/companies.json
+          if git diff --staged --quiet; then
+            echo "数据无变化，跳过提交"
+          else
+            git commit -m "data: update $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

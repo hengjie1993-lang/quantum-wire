@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantum Wire · 全球量子科技企业发布索引</title>
+<meta name="description" content="收录全球量子科技企业的一手发布：融资并购、产品发布、财报业绩、合作签约与技术进展。按国家、技术路线与事件类型结构化检索，附原文链接。">
+<link rel="canonical" href="https://quantumwire.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quantum Wire · 全球量子科技企业发布索引">
+<meta property="og:description" content="全球量子科技企业一手发布的结构化索引，按国家与技术路线检索，附原文链接。">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="./style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Quantum Wire",
+ "description":"全球量子科技企业一手发布的结构化索引",
+ "url":"https://quantumwire.vercel.app/"}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap hrow">
+    <div class="brand">
+      <div class="mark"></div>
+      <div><div class="bname">Quantum Wire</div><div class="bsub">量子企业发布索引</div></div>
+    </div>
+    <nav class="mainnav">
+      <a href="#" class="on" data-view="feed">信息流</a>
+      <a href="#" data-view="companies">企业库</a>
+      <a href="#" data-view="about">关于</a>
+    </nav>
+    <div class="tools">
+      <div class="search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="q" placeholder="搜索企业 / 国家 / 关键词">
+      </div>
+      <button class="tbtn" id="theme"><span id="themeIcon">◐</span></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>全球量子科技企业的<em>一手发布</em>，<br>按国家与地区结构化收录。</h1>
+    <p>不做二手转述，不写主观评论。只收录企业自己发布的公告：融资并购、产品发布、财报业绩、合作签约与技术进展，按国家、技术路线和事件类型整理成可检索的索引，每条附原文链接。</p>
+    <div class="stats">
+      <div class="stat"><b id="s-items">–</b><span>收录条目</span></div>
+      <div class="stat"><b id="s-official">–</b><span>企业一手发布</span></div>
+      <div class="stat"><b id="s-co">–</b><span>收录企业</span></div>
+      <div class="stat"><b id="s-cty">–</b><span>国家 / 地区</span></div>
+    </div>
+    <div class="upd" id="upd"></div>
+  </section>
+
+  <div class="filters" id="filters">
+    <div class="fgroup">
+      <span class="flabel">来源级别</span>
+      <label class="sw"><input type="checkbox" id="onlyOfficial" checked><span class="track"></span><span>仅显示企业一手发布</span></label>
+      <span style="font-size:12px;color:var(--tx3)">（关闭后包含媒体报道线索）</span>
+    </div>
+    <div class="fgroup"><span class="flabel">事件类型</span><span id="fType"></span></div>
+    <div class="fgroup"><span class="flabel">技术路线</span><span id="fTrack"></span></div>
+    <div class="fgroup"><span class="flabel">国家地区</span><span id="fCty"></span></div>
+  </div>
+
+  <div id="viewFeed">
+    <div class="layout">
+      <div id="feed"><div class="loading">正在加载数据…</div></div>
+      <aside>
+        <div class="panel"><h5>活跃企业 <span>Top 8</span></h5><div id="rank"></div></div>
+        <div class="panel"><h5>国家 / 地区分布</h5><div id="ctylist"></div></div>
+        <div class="panel"><h5>技术路线分布</h5><div id="tracks"></div></div>
+        <div class="panel sub"><h5>数据来源</h5><div id="srclist"></div></div>
+      </aside>
+    </div>
+  </div>
+
+  <div id="viewCompanies" class="hidden">
+    <div class="layout" style="grid-template-columns:1fr">
+      <div id="cgrid"></div>
+    </div>
+  </div>
+
+  <div id="viewAbout" class="hidden">
+    <div class="layout" style="grid-template-columns:1fr">
+      <div class="panel" style="padding:28px">
+        <h2 style="font-size:20px;font-weight:600;margin-bottom:14px">关于本站</h2>
+        <p style="color:var(--tx2);line-height:1.8;margin-bottom:14px">
+          Quantum Wire 是一个索引服务，收录全球量子科技企业公开发布的一手信息。每条记录包含标题、摘要、发布时间、来源机构与原文链接，不存储、不转载、不翻译全文。
+        </p>
+        <h3 style="font-size:15px;font-weight:600;margin:20px 0 10px">三层数据采集架构</h3>
+        <p style="color:var(--tx2);line-height:1.8;margin-bottom:10px">
+          <strong style="color:var(--tx)">核实层</strong>：企业官网 Newsroom、SEC EDGAR 监管披露、PR 通讯社稿件 —— 这些是「企业一手发布」，构成站点主体。<br>
+          <strong style="color:var(--tx)">发现层</strong>：Google News 等行业线索源 —— 用于发现哪家企业有动静，标记级别低于一手发布。<br>
+          <strong style="color:var(--tx)">兜底层</strong>：发现层有线索但核实层未拿到的，不发布。
+        </p>
+        <h3 style="font-size:15px;font-weight:600;margin:20px 0 10px">收录范围</h3>
+        <p style="color:var(--tx2);line-height:1.8">
+          企业官方发布、融资并购、上市公司财报。不含学术论文预印本、政府政策文件与媒体评论。
+        </p>
+        <h3 style="font-size:15px;font-weight:600;margin:20px 0 10px">版权与免责</h3>
+        <p style="color:var(--tx2);line-height:1.8">
+          所有内容的著作权归原始发布方所有。点击「原文」将跳转至发布方网站。如您是内容权利人且不希望被收录，请联系我们，将在 24 小时内移除。
+        </p>
+        <p style="color:var(--tx2);line-height:1.8;margin-top:14px">
+          国家和地区标注遵循一个中国原则，中国台湾、中国香港、中国澳门均为中国的一部分，单列为地区条目。
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fwrap">
+      <div><strong>Quantum Wire</strong><br>全球量子科技企业发布索引</div>
+      <div>核实层：企业官网 / SEC EDGAR / PR 通讯社<br>发现层：Google News</div>
+      <div>每日自动更新两次<br><span style="opacity:.8">静态站点 · 无追踪</span></div>
+    </div>
+    <div class="note">
+      本站仅提供标题、摘要与原文链接的索引服务，不存储、不转载、不翻译全文。所有内容著作权归原始发布方所有。
+    </div>
+  </div>
+</footer>
+
+<script src="./app.js"></script>
+</body>
+</html>
