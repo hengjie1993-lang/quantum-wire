@@ -51,6 +51,74 @@ COUNTRIES = {
     "AU": ["澳大利亚", "Australia", "#3CA87E"], "SA": ["沙特", "Saudi Arabia", "#4A9E7E"],
 }
 
+# 技术参数抽取规则 —— 只在明确上下文里取值，宁可漏抽也不要误抽
+# 形如 "256 Platform" 这类产品型号不会被当作比特数，因为要求单位紧跟数字
+SPEC_RULES = [
+    # 逻辑比特要求数字与「logical qubits」紧邻，不做宽松前瞻，否则极易误抽
+    ("logical_qubits", [r"\b(\d{1,3})\s*logical\s+qubits?\b"], "int"),
+    ("qubits", [r"\b(\d{1,4})\s*(?:physical\s+)?qubits?\b",
+                r"\b(\d{1,4})\s*[-–]\s*qubit\b",
+                r"\b(\d{1,4})\s*qubit\s+(?:system|processor|computer|machine|chip|device|processor)\b",
+                r"\b(\d{1,4})\s*(?:qubit|QPU)\s+(?:quantum\s+)?(?:computer|processor|system)\b"], "int"),
+    ("fidelity", [r"(?:fidelity|保真度)[^\d]{0,24}?(\d{2}(?:\.\d+)?)\s*%",
+                  r"(\d{2}(?:\.\d+)?)\s*%\s*(?:two-?qubit\s+|gate\s+)?fidelity"], "float"),
+    ("error_rate", [r"error\s+rate[^\d]{0,24}?(\d+(?:\.\d+)?)\s*%",
+                    r"(\d+(?:\.\d+)?)\s*%\s*error\s+rate"], "float"),
+    ("amount", [r"([$€£])\s?(\d+(?:\.\d+)?)\s*(billion|million|bn|m\b|b\b)",
+                r"\b(usd|eur|gbp)\s?(\d+(?:\.\d+)?)\s*(billion|million|bn|m\b|b\b)",
+                r"\b(\d+(?:\.\d+)?)\s*(million|billion)\s*(?:usd|dollars?|euros?)\b"], "money"),
+]
+MONEY_MULT = {"billion": 1e9, "b": 1e9, "bn": 1e9, "million": 1e6, "m": 1e6}
+CURMAP = {"usd": "$", "eur": "€", "gbp": "£"}
+
+
+def extract_specs(title, desc="", ctx=False):
+    """从文本抽取技术参数。
+
+    返回 {key: value}；ctx=True 时额外返回 {key: 原文上下文片段}，
+    用于让读者判断数值的真实语境（例如「模拟规模」还是「实际硬件规格」）。
+    """
+    blob = (title or "") + " " + (desc or "")
+    out = {}
+    ctxs = {}
+    for key, pats, kind in SPEC_RULES:
+        if key in out:
+            continue
+        m = None
+        for pat in pats:
+            m = re.search(pat, blob, re.I)
+            if m:
+                break
+        if not m:
+            continue
+        if ctx:
+            a = max(0, m.start() - 85)
+            ctxs[key] = blob[a:m.end() + 85].strip()
+        try:
+            if kind == "money":
+                raw_cur = (m.group(1) or "").strip()
+                cur = CURMAP.get(raw_cur.lower(), raw_cur if raw_cur in "$€£" else "$")
+                # 第三种模式：数字在前、货币码在后，分组顺序不同
+                if re.match(r"^\d", raw_cur):
+                    num, unit = float(raw_cur), m.group(2).lower()
+                else:
+                    num, unit = float(m.group(2)), m.group(3).lower()
+                mult = MONEY_MULT.get(unit)
+                if not mult:
+                    continue
+                out[key] = {"currency": cur, "value": num * mult, "raw": m.group(0).strip()}
+            elif kind == "int":
+                out[key] = int(m.group(1))
+            else:
+                v = float(m.group(1))
+                if key == "fidelity" and v < 50:   # 保真度不可能低于 50%，多半是误抽
+                    continue
+                out[key] = v
+        except (ValueError, TypeError):
+            continue
+    return (out, ctxs) if ctx else out
+
+
 # 上站分级：official = 企业一手发布（官网 / SEC / 通讯社稿件）；media = 媒体线索
 SOURCE_TIER = {"企业官网": "official", "SEC EDGAR": "official", "PR Newswire": "official",
                "Google News": "media"}
@@ -538,14 +606,57 @@ def normalize(raw_items, source, days, force_company=""):
             "source": source,
             "tier": SOURCE_TIER.get(source, "media"),
             "form": r.get("form", ""),
+            # Google News 的 description 是拼接片段，容易把不相邻的词凑成参数，
+            # 所以媒体线索只从标题抽；正文补抽也只做一手发布（见 enrich）
+            "specs": extract_specs(title, "" if source == "Google News" else (r.get("desc") or "")),
         })
     return out
+
+
+def enrich(items, limit=90):
+    """对一手发布抓详情页补抽技术参数。
+
+    只读取页面并抽取数值，不保存正文 —— 页面里留下的仍然只有「数值 + 原文链接」。
+    """
+    targets = [i for i in items if i.get("tier") == "official" and i.get("url")][:limit]
+
+    def one(it):
+        try:
+            raw = get(it["url"], timeout=15, retries=0)
+        except Exception:
+            return (None, None)
+        t = re.sub(r"<script.*?</script>", " ", raw, flags=re.S | re.I)
+        t = re.sub(r"<style.*?</style>", " ", t, flags=re.S | re.I)
+        t = re.sub(r"<[^>]+>", " ", t)
+        t = html.unescape(re.sub(r"\s+", " ", t))
+        return extract_specs(t[:8000], "", ctx=True)
+
+    if not targets:
+        return 0, 0
+    with ThreadPoolExecutor(max_workers=5) as ex:
+        res = list(ex.map(one, targets))
+    added, touched = 0, 0
+    for it, (sp, ctxs) in zip(targets, res):
+        if not sp:
+            continue
+        hit = False
+        for k, v in sp.items():
+            if k not in it.get("specs", {}):
+                it.setdefault("specs", {})[k] = v
+                if ctxs and ctxs.get(k):
+                    it.setdefault("spec_ctx", {})[k] = ctxs[k]
+                added += 1
+                hit = True
+        if hit:
+            touched += 1
+    return added, touched
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=30, help="回溯天数")
     ap.add_argument("--out", default=DATA + "/items.json")
+    ap.add_argument("--no-enrich", action="store_true", help="跳过详情页补抽（更快）")
     args = ap.parse_args()
 
     print("=" * 72)
@@ -594,6 +705,11 @@ def main():
             continue
         seen.add(k)
         final.append(it)
+
+    if not args.no_enrich:
+        print("\n[补充] 一手发布详情页参数补抽（只读页面抽数值，不保存正文）")
+        added, touched = enrich(final)
+        print("  补抽 %d 个参数，覆盖 %d 条发布" % (added, touched))
 
     named = sum(1 for i in final if i["company"])
     print("\n" + "=" * 72)

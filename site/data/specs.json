@@ -1,0 +1,362 @@
+{
+ "generated_at": "2026-09-29T09:24:57.633749+00:00",
+ "companies": {
+  "Infleqtion": {
+   "qubits": null,
+   "logical_qubits": 30,
+   "fidelity": null,
+   "error_rate": null,
+   "amounts": [
+    {
+     "value": 20000000.0,
+     "currency": "$",
+     "raw": "$20 million",
+     "title": "Infleqtion extends work on quantum gravity mission under $20 million NASA contract",
+     "url": "https://infleqtion.com/news/infleqtion-extends-work-on-quantum-gravity-mission-under-20-million-nasa-contract/",
+     "date": "",
+     "source": "企业官网"
+    },
+    {
+     "value": 20000000.0,
+     "currency": "$",
+     "raw": "$20M",
+     "title": "NASA awards Infleqtion $20M quantum contract as US-China global tech race heats up",
+     "url": "https://infleqtion.com/news/nasa-awards-infleqtion-20m-quantum-contract-as-us-china-global-tech-race-heats-up/",
+     "date": "",
+     "source": "企业官网"
+    }
+   ],
+   "evidence": {
+    "logical_qubits": {
+     "title": "Infleqtion Entangles 30 Logical Qubits On Sqale Computer",
+     "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1TamxZNGNFRVowZDhMUUZ5MzdEVzV2XzBJR1d5RU1KdmZGMUhiWDg4eVBWRjFYcE5hWVdMM05XXzdPclJReUUxREtHMVhDVFpUVjVoaFZPTE51OVJfc2tRUk04aVgtRVJwTXN0TVVQQjVZRnNf?oc=5",
+     "date": "2026-09-26",
+     "source": "Google News",
+     "ctx": ""
+    }
+   }
+  },
+  "IonQ": {
+   "qubits": 256,
+   "logical_qubits": 408,
+   "fidelity": null,
+   "error_rate": null,
+   "amounts": [
+    {
+     "value": 8180000.0,
+     "currency": "$",
+     "raw": "$8.18M",
+     "title": "IonQ and Congruity360 Partner to Enhance Quantum-Safe Protection September 8, 2026 2026-09-08 IonQ Press Release",
+     "url": "https://ionq.com/news/ionq-and-congruity360-partner-to-enhance-quantum-safe-protection",
+     "date": "2026-09-08",
+     "source": "企业官网"
+    },
+    {
+     "value": 8180000.0,
+     "currency": "$",
+     "raw": "$8.18M",
+     "title": "IonQ & Congruity360 Ink $8.18M Quantum Security Agreement",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPY0ZJVktkQ1dZeGVKM3Y3UU9zVzlfR3JXWDFGWmxjMlJXbmdSblVudjc5cUZFTFdtYmFaeExuZktxbjBqbmZTTTJfR2tsVE1HWFNHZ283TkFHN3d2SUhmSXFhTTcxWV85eXVHOXNNQlZ5dG5aY2dyY2RlSGNyV2h2S0lxV29kOUEyNmF0ZDdIYjB4SVli?oc=5",
+     "date": "2026-09-08",
+     "source": "Google News"
+    }
+   ],
+   "evidence": {
+    "qubits": {
+     "title": "Florida International University To Get IonQ’s 256-qubit Computer By Late 2027",
+     "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPaXpUWU5ISTJaQU5sSE9Ga1ZWUkJZRXJZdXVEMldNTTdNdy1zYWNyQnRtaEZhVDNIdFBwaElDS1VsQVVUMXB1RmduLXRhQnVXemJrbUlxUENuY0lSaTdGakpsVDZOdDZDRU9pU2NMYmlsaUhySnRKbXBIeWdtRWk0Tg?oc=5",
+     "date": "2026-09-25",
+     "source": "Google News",
+     "ctx": ""
+    },
+    "logical_qubits": {
+     "title": "IonQ Demonstrates Industry’s First End-to-End Real-Time Quantum Error Decoder September 22, 2026 2026-09-22 IonQ Press Release",
+     "url": "https://ionq.com/news/ionq-demonstrates-industrys-first-end-to-end-real-time-quantum-error-decoder",
+     "date": "2026-09-22",
+     "source": "企业官网",
+     "ctx": "ted its dual-decoder architecture across complex benchmark circuits simulating up to 408 logical qubits across 88 memory blocks and magic factories. These circuits were executing more than"
+    }
+   }
+  },
+  "QuEra Computing": {
+   "qubits": 256,
+   "logical_qubits": 256,
+   "fidelity": null,
+   "error_rate": null,
+   "amounts": [
+    {
+     "value": 500000000.0,
+     "currency": "$",
+     "raw": "$500 million",
+     "title": "QuEra Computing Joins Capital of Quantum",
+     "url": "https://www.quera.com/press-releases/quera-computing-joins-capital-of-quantum",
+     "date": "2026-09-22",
+     "source": "企业官网"
+    }
+   ],
+   "evidence": {
+    "qubits": {
+     "title": "QuEra Computing Joins Capital of Quantum",
+     "url": "https://www.quera.com/press-releases/quera-computing-joins-capital-of-quantum",
+     "date": "2026-09-22",
+     "source": "企业官网",
+     "ctx": "tors, and entrepreneurs to develop and test hands-on quantum applications with up to 256 qubits offered by this quickly developing hardware platform” said Norbert Linke, Director o"
+    },
+    "logical_qubits": {
+     "title": "QuEra Computing Collaborates with HPE to Bring Fault-Tolerant Quantum Computing to On-Premises HPC Environments",
+     "url": "https://www.quera.com/press-releases/quera-computing-collaborates-with-hpe-to-bring-fault-tolerant-quantum-computing-to-on-premises-hpc-environments",
+     "date": "2026-09-22",
+     "source": "企业官网",
+     "ctx": "jor Cloud provider. Libra, QuEra's first fault-tolerant quantum computer, is an over 256 logical qubit, megaquop-class system designed to perform on the order of one million reliable logi"
+    }
+   }
+  },
+  "D-Wave Quantum": {
+   "qubits": null,
+   "logical_qubits": null,
+   "fidelity": null,
+   "error_rate": null,
+   "amounts": [
+    {
+     "value": 100000000.0,
+     "currency": "$",
+     "raw": "$100M",
+     "title": "D-Wave to Host Qubits Asia 2026 in Seoul",
+     "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-to-host-qubits-asia-2026-in-seoul/",
+     "date": "2026-09-16",
+     "source": "企业官网"
+    },
+    {
+     "value": 100000000.0,
+     "currency": "$",
+     "raw": "$100M",
+     "title": "D-Wave to Showcase Unique Dual-Platform Quantum Computing at Quantum World Congress 2026",
+     "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-to-showcase-unique-dual-platform-quantum-computing-at-quantum-world-congress-2026/",
+     "date": "2026-09-16",
+     "source": "企业官网"
+    },
+    {
+     "value": 100000000.0,
+     "currency": "$",
+     "raw": "$100M",
+     "title": "D-Wave Technology Drives NTT DOCOMO’s Second Production Quantum Application in Network Operations",
+     "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-technology-drives-ntt-docomo-s-second-production-quantum-application-in-network-operations/",
+     "date": "2026-08-25",
+     "source": "企业官网"
+    }
+   ],
+   "evidence": {}
+  },
+  "PsiQuantum": {
+   "qubits": null,
+   "logical_qubits": null,
+   "fidelity": null,
+   "error_rate": null,
+   "amounts": [
+    {
+     "value": 100000000.0,
+     "currency": "$",
+     "raw": "$100 Million",
+     "title": "PsiQuantum Finalizes $100 Million U.S. Department Of Commerce Award",
+     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQdjdTM3FqZ2dDYWowVkZaMldRQmRRVnoyZEJoUFg2bG53T29VeHJqWldEcm93eWp3QTRRa1R2cnY1R2xwUVlJalF4cURrYnlyN2dSYmZXMWtCTmhMaGlfR1o5bjRKdDNoSXBiWVIycWZvWnhvNy1ybVJ5a0VxaEM3X0tZelF1cXllNHN5NHh30gHGAUFVX3lxTE1pWEZ2SHhnMHNMSTg3cUg2ZlE4cm1TZ3pWM185dUE5YThYdE9fNi1HOExzU0Y3bFpwSEdjUDJSMFV4TmVFQXJTSmhhdU9MLUhFZDNWS0NPRHE4NU9BLUtST0VPTDZpbkdobFphamE1akN6VEpySUZZVkE0bVBaMUpmNGZWTVNnSGVDMmpkX2RxQk5iQlUzSFRmZ3pjTU40QUdVUW9OejJ2ZzMzQTF1WmhaZ28yRXUzOGpGUFVhdVlfREx6dUxhQQ?oc=5",
+     "date": "2026-09-12",
+     "source": "Google News"
+    },
+    {
+     "value": 100000000.0,
+     "currency": "$",
+     "raw": "$100 Million",
+     "title": "PsiQuantum Lands $100 Million To Build Quantum Parts In The US",
+     "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE53ck9FUGRYcjc0dF85SUhoM0ltLU1qMGhvdnBEd1o2b0MtTUI3XzhLNHBQc3NwNERZSzZ5dkFMamZvcDhqT2pkdGhUQUg4dC1fOUJqekFOTnR5bGRTaEZ4a1BHV3A1WXloSTg1UFktMnc5dGct?oc=5",
+     "date": "2026-09-08",
+     "source": "Google News"
+    },
+    {
+     "value": 100000000.0,
+     "currency": "$",
+     "raw": "$100 Million",
+     "title": "PsiQuantum Finalizes $100 Million Award with the U.S. Department of Commerce",
+     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNWHFwNFhhRWJDUDNCNkE1NVQwR1o2RUtMTkxqdDdYSE40TEM1RDhtNXczQ0E0WExJdXhVQTRDN2VFN1I0M0lINGMwMGZGeTdhcFpSa0V0Nm82NExmU1BlWmF5U2c1ZDdtRm9YMGVsTUhldnRCMmFuRDdPZ0ZQRndFUndxcTBFelBVaTl5M0JKZ3RiZnFoMUJLXzNsdzZHb0lvSy1kMFFPZG5xb3luLUlzbUF3VnFBR1hfZVQwTS1acGp2dUlDZzNwSHhfZ3Z2NGdN?oc=5",
+     "date": "2026-09-08",
+     "source": "Google News"
+    }
+   ],
+   "evidence": {}
+  },
+  "Quandela": {
+   "qubits": 12,
+   "logical_qubits": null,
+   "fidelity": null,
+   "error_rate": null,
+   "amounts": [],
+   "evidence": {
+    "qubits": {
+     "title": "Quandela and Quanova sign strategic partnership to build quantum capabilities in Vietnam",
+     "url": "https://www.quandela.com/newsroom-posts/quandela-quanova-quantum-computing-vietnam/",
+     "date": "2026-09-11",
+     "source": "企业官网",
+     "ctx": "computer deployed out of the lab Belenos Our second-generation quantum computer with 12 qubits Canopus Our latest quantum computer, based on state-of-the-art technologies Solution"
+    }
+   }
+  },
+  "Quantinuum": {
+   "qubits": null,
+   "logical_qubits": null,
+   "fidelity": null,
+   "error_rate": null,
+   "amounts": [
+    {
+     "value": 575000000.0,
+     "currency": "$",
+     "raw": "$575M",
+     "title": "Quantinuum, PsiQuantum, GlobalFoundries, Secure $575M in Funding: Week in Brief: 9/11/26",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOb2hYYjFNalQwbzI4Sk9INnB5Xy1yMTRvU3RBMGEzTFZLRllKQzUtdkFWTGhvSC03Y2Q0bndxR2hyR0FpU2pVdUtSX2pSaHFjMTEweUwzY1BPSmZReUJNdUVZd3J5YkNKdnVIN1c2Z3FkaVlZQkhwQWZ0QjBtWER6eWtPZjFtamI2SDhOeWV5RQ?oc=5",
+     "date": "2026-09-11",
+     "source": "Google News"
+    },
+    {
+     "value": 100000000.0,
+     "currency": "$",
+     "raw": "$100 Million",
+     "title": "Quantinuum Finalizes $100 Million CHIPS R&D Award with U.S. Department of Commerce to Advance Trapped-Ion Quantum Computer Manufacturing in the US",
+     "url": "https://news.google.com/rss/articles/CBMipAJBVV95cUxOdnJMYlE3X1hxMm5GcTV5SktnSDJqbXVlS1dSWUlqbHBFSmtCc0ZDRjlFUXpPTm9lZWRka0NVLTk0TFhOaUMxMWZUMXk4dkVhYURJbmJGNGwzWU0xTW5jRnE5VGJRMlVyUHVjYXRxZ2dZNUQ1Um1xVEJYVmNORHp4ZGkzSnptaWdvV1AzNm1PUDlQUUJ1eDI3RGV5VUdIeEJ3RWhqU0FGYzRBVk0ySTNybENWVU1BYjFXZVo2V3hiSTEwREhTUC15R1daRElZdnRPMThnREhjakFnbU9VQXNRcE5ERUJhRVA0amFlZDlpNm11eDdPT2R4R0FKbF9wYzVGcUlMYmZIVjhXUS1tUTQ5TTJOREFLSVdtMlJGTTJaU1JxRXQx?oc=5",
+     "date": "2026-09-08",
+     "source": "Google News"
+    }
+   ],
+   "evidence": {}
+  },
+  "Rigetti Computing": {
+   "qubits": null,
+   "logical_qubits": null,
+   "fidelity": null,
+   "error_rate": null,
+   "amounts": [
+    {
+     "value": 100000000.0,
+     "currency": "$",
+     "raw": "$100 million",
+     "title": "Rigetti Computing, Inc. files 8-K — FORM 8-K",
+     "url": "https://www.sec.gov/Archives/edgar/data/1838359/000110465926105662/tm2624940d1_8k.htm",
+     "date": "2026-09-08",
+     "source": "SEC EDGAR"
+    }
+   ],
+   "evidence": {}
+  },
+  "Quantum Motion": {
+   "qubits": null,
+   "logical_qubits": null,
+   "fidelity": null,
+   "error_rate": null,
+   "amounts": [
+    {
+     "value": 160000000.0,
+     "currency": "$",
+     "raw": "$160m",
+     "title": "Quantum Motion secures additional investment in extended $160m Series C funding round",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOU00yeHo3V2JEMk1Ga19pMlcwaE9TYjZndUpaaVBtcUpObl9IdnFyRVVWQXB3MDUtcFpUSVpIanpVY0tJczVTckpPOFZFY3RGNE04VjNsN2tRRGJrWkVCZGZQbnVyNThvVGU1aEdVY1R3aS12LTFrLWhtVHVWWXM4bzRXYzQyY0YxNGQ5S0lVdHNVRnBFM3k1aGRJZFBUR3pmZ3BnNDIycEFWUkRyYURNdEdlUHVhNDN6VW5Rbmg0cEMyUURMR0NN?oc=5",
+     "date": "2026-09-04",
+     "source": "Google News"
+    }
+   ],
+   "evidence": {}
+  },
+  "Pasqal": {
+   "qubits": null,
+   "logical_qubits": null,
+   "fidelity": null,
+   "error_rate": null,
+   "amounts": [
+    {
+     "value": 360000000.0,
+     "currency": "$",
+     "raw": "$360M",
+     "title": "Pasqal (PSQL) Has $360M to Scale From Seven Quantum Systems. Is €16.5M of Revenue Enough to Support the Road Map?",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPS3Q0U0Z3TkhOVXpuRS01YW9HNXg4cEdDMWJzeTV4MkpwRlpDY1NOc3V0V1RMdUhRNTA1MEhkaGdCWVZtSDFxOGdoOXpoUlMwTVR6M05Qc1g3YXFFTFZVTGZsaW14aHQwWTc4Mi1kdjJCby05OW9zV1drQ2haMlYydGRWMWxXOUc5WDV4TkJvMGtRbG4xRk93?oc=5",
+     "date": "2026-09-04",
+     "source": "Google News"
+    }
+   ],
+   "evidence": {}
+  },
+  "IQM Quantum Computers": {
+   "qubits": 150,
+   "logical_qubits": 9,
+   "fidelity": null,
+   "error_rate": null,
+   "amounts": [
+    {
+     "value": 127700000.0,
+     "currency": "€",
+     "raw": "EUR 127.7 million",
+     "title": "IQM Quantum Computers and Real Asset Acquisition Corp. complete the combination; trading in IQM’s ADSs and IQM Warrants on Nasdaq Stock Market LLC commences on July 2, 2026",
+     "url": "https://iqm.tech/press-releases/iqm-quantum-computers-and-real-asset-acquisition-corp-complete-the-combination-trading-in-iqms-adss-and-iqm-warrants-on-nasdaq-stock-market-llc-commences-on-july-2-2026/",
+     "date": "2026-07-02",
+     "source": "企业官网"
+    },
+    {
+     "value": 102000000.0,
+     "currency": "€",
+     "raw": "EUR 102 million",
+     "title": "IQM to deliver its first quantum computer in South America to Brazil’s Eldorado Research Institute",
+     "url": "https://iqm.tech/press-releases/iqm-to-deliver-its-first-quantum-computer-in-south-america-to-brazils-eldorado-research-institute/",
+     "date": "",
+     "source": "企业官网"
+    },
+    {
+     "value": 102000000.0,
+     "currency": "€",
+     "raw": "€102 million",
+     "title": "TOYO Corporation opens its quantum computers to Japan’s ecosystem",
+     "url": "https://iqm.tech/press-releases/toyo-corporation-opens-its-quantum-computers-to-japans-ecosystem/",
+     "date": "",
+     "source": "企业官网"
+    },
+    {
+     "value": 337000000.0,
+     "currency": "€",
+     "raw": "EUR 337 million",
+     "title": "IQM Quantum Computers Becomes First European Quantum Computing Company Listed on a Major U.S. Exchange",
+     "url": "https://iqm.tech/press-releases/iqm-quantum-computers-becomes-first-european-quantum-computing-company-listed-on-a-major-u-s-exchange/",
+     "date": "",
+     "source": "企业官网"
+    },
+    {
+     "value": 8300000000.000001,
+     "currency": "$",
+     "raw": "$8.3 billion",
+     "title": "New Industry Study Finds Quantum Computing Has Entered a Capability Era, With Early Movers Building an Advantage Later Entrants Will Struggle to Close",
+     "url": "https://iqm.tech/press-releases/new-industry-study-finds-quantum-computing-has-entered-a-capability-era-with-early-movers-building-an-advantage-later-entrants-will-struggle-to-close/",
+     "date": "",
+     "source": "企业官网"
+    },
+    {
+     "value": 146000000.0,
+     "currency": "$",
+     "raw": "USD 146 million",
+     "title": "IQM, a Global Leader in Quantum Computing, and Real Asset Acquisition Corp. Announce Upsized USD 146 million PIPE with New Commitment from Ilmarinen",
+     "url": "https://iqm.tech/press-releases/iqm-a-global-leader-in-quantum-computing-and-real-asset-acquisition-corp-announce-upsized-usd-146-million-pipe-with-new-commitment-from-ilmarinen/",
+     "date": "",
+     "source": "企业官网"
+    }
+   ],
+   "evidence": {
+    "qubits": {
+     "title": "LUMI AI Factory selects IQM’s staged path to Europe’s first superconducting quantum computer with logical qubits",
+     "url": "https://iqm.tech/press-releases/lumi-ai-factory-selects-iqms-staged-path-to-europes-first-superconducting-quantum-computer-with-logical-qubits/",
+     "date": "",
+     "source": "企业官网",
+     "ctx": "red in three steps: the first installation of an IQM Halocene H4 system in 2027 with 150 physical qubits and early quantum error correction capabilities. The system will be upgraded in 2028"
+    },
+    "logical_qubits": {
+     "title": "LUMI AI Factory selects IQM’s staged path to Europe’s first superconducting quantum computer with logical qubits",
+     "url": "https://iqm.tech/press-releases/lumi-ai-factory-selects-iqms-staged-path-to-europes-first-superconducting-quantum-computer-with-logical-qubits/",
+     "date": "",
+     "source": "企业官网",
+     "ctx": "tance 3 surface code and colour code, the system will enable computations with up to 9 logical qubits. Additionally, the is capable encoding logical qubits up to distance 11 with surface"
+    }
+   }
+  }
+ }
+}

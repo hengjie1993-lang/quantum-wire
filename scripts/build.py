@@ -59,6 +59,7 @@ TPL = """<!DOCTYPE html>
     <nav class="mainnav">
       <a href="../index.html">信息流</a>
       <a href="../index.html#companies">企业库</a>
+      <a href="../specs.html">技术参数</a>
       <a href="../index.html#about">关于</a>
     </nav>
     <div class="tools">
@@ -107,6 +108,92 @@ def timeline(items, limit=None):
     return "".join(h)
 
 
+def agg_specs(items):
+    """企业维度汇总技术参数：数值类取最大（保守），金额按时间倒序保留全部"""
+    agg = {}
+    for i in items:
+        co = i.get("company")
+        if not co or not i.get("specs"):
+            continue
+        a = agg.setdefault(co, {"qubits": None, "logical_qubits": None, "fidelity": None,
+                                "error_rate": None, "amounts": [], "evidence": {}})
+        sp = i["specs"]
+        for k in ("qubits", "logical_qubits", "fidelity"):
+            v = sp.get(k)
+            if v is None:
+                continue
+            cur = a.get(k)
+            if cur is None or v > cur:
+                a[k] = v
+                a["evidence"][k] = {"title": i.get("title_en"), "url": i.get("url"),
+                                    "date": i.get("date"), "source": i.get("source"),
+                                    "ctx": (i.get("spec_ctx") or {}).get(k, "")}
+        if "amount" in sp:
+            m = sp["amount"]
+            a["amounts"].append({"value": m["value"], "currency": m["currency"], "raw": m["raw"],
+                                 "title": i.get("title_en"), "url": i.get("url"),
+                                 "date": i.get("date"), "source": i.get("source")})
+    for a in agg.values():
+        a["amounts"].sort(key=lambda x: x.get("date") or "", reverse=True)
+    return agg
+
+
+def fmt_money(v, cur):
+    if v >= 1e9:
+        return "%s%.2fB" % (cur, v / 1e9)
+    if v >= 1e6:
+        return "%s%.0fM" % (cur, v / 1e6)
+    return "%s%.0f" % (cur, v)
+
+
+def fmt_num(v):
+    if v is None:
+        return "—"
+    return ("%g" % v)
+
+
+def spec_block(name, sp):
+    """企业页的技术参数区块"""
+    if not sp:
+        return ""
+    rows = []
+    if sp.get("qubits") is not None:
+        rows.append(("量子比特", fmt_num(sp["qubits"]), "qubits"))
+    if sp.get("logical_qubits") is not None:
+        rows.append(("逻辑比特", fmt_num(sp["logical_qubits"]), "logical_qubits"))
+    if sp.get("fidelity") is not None:
+        rows.append(("保真度", fmt_num(sp["fidelity"]) + "%", "fidelity"))
+    if not rows and not sp.get("amounts"):
+        return ""
+    h = ['<div class="ph">技术参数（自动抽取）</div>']
+    if rows:
+        h.append('<div class="specgrid">')
+        for label, val, key in rows:
+            ev = (sp.get("evidence") or {}).get(key) or {}
+            link = ('<a class="specev" href="%s" target="_blank" rel="noopener">%s · %s</a>'
+                    % (esc(ev.get("url")), esc(ev.get("source")), esc(ev.get("date") or ""))
+                    ) if ev.get("url") else ""
+            ctxhtml = ('<div class="specctx">原文语境：…%s…</div>'
+                       % esc((ev.get("ctx") or "")[:150])) if ev.get("ctx") else ""
+            h.append('<div class="speccard"><span class="sp-k">%s</span>'
+                     '<b class="sp-v">%s</b>%s%s</div>'
+                     % (esc(label), esc(val), ctxhtml, link))
+        h.append("</div>")
+    if sp.get("amounts"):
+        h.append('<div class="ph2">公开披露金额</div><div class="amtlist">')
+        for m in sp["amounts"][:6]:
+            h.append('<a class="amtrow" href="%s" target="_blank" rel="noopener">'
+                     '<span class="amt-v">%s</span>'
+                     '<span class="amt-t">%s</span>'
+                     '<span class="amt-d">%s</span></a>'
+                     % (esc(m.get("url")), esc(fmt_money(m["value"], m["currency"])),
+                        esc((m.get("title") or "")[:110]), esc(m.get("date") or "")))
+        h.append("</div>")
+    h.append('<div class="disclaim">参数由程序从发布标题与摘要中自动抽取，'
+             '仅反映公开披露口径，可能不完整或存在误差。点击任意条目可核对原文。</div>')
+    return "".join(h)
+
+
 def crumb(*parts):
     h = ['<div class="crumb">']
     h.append('<a href="../index.html">首页</a>')
@@ -142,6 +229,11 @@ def build(base):
             by_co.setdefault(i["company"], []).append(i)
     for k in by_co:
         by_co[k].sort(key=lambda x: x.get("date") or "", reverse=True)
+
+    SPECS = agg_specs(items)
+    with open(os.path.join(DATA, "specs.json"), "w", encoding="utf-8") as f:
+        json.dump({"generated_at": payload.get("generated_at"), "companies": SPECS},
+                  f, ensure_ascii=False, indent=1)
 
     # slug 写回 companies.json，供首页前端链接使用
     used = set()
@@ -186,6 +278,7 @@ def build(base):
                 body.append('<span class="srcpill">%s · %d</span>' % (esc(k), v))
             body.append("</div>")
 
+        body.append(spec_block(name, SPECS.get(name)))
         body.append('<div class="ph">发布记录时间线</div>')
         body.append(timeline(own))
 
@@ -268,6 +361,69 @@ def build(base):
         with open(os.path.join(SITE, "country", code + ".html"), "w", encoding="utf-8") as f:
             f.write(out)
         urls.append(("%s/country/%s.html" % (base, code), "0.7"))
+
+    # ---------- 技术参数对比页 ----------
+    by_track = {}
+    for name, sp in SPECS.items():
+        c = COMP.get(name)
+        if not c:
+            continue
+        if not any([sp.get("qubits"), sp.get("logical_qubits"),
+                    sp.get("fidelity"), sp.get("amounts")]):
+            continue
+        by_track.setdefault(c["track"], []).append((name, c, sp))
+    n_with = sum(len(v) for v in by_track.values())
+
+    def cell(sp, key, suffix=""):
+        v = sp.get(key)
+        if v is None:
+            return "—"
+        ev = (sp.get("evidence") or {}).get(key) or {}
+        s = fmt_num(v) + suffix
+        if ev.get("url"):
+            return '<a href="%s" target="_blank" rel="noopener">%s</a>' % (esc(ev["url"]), esc(s))
+        return esc(s)
+
+    body = [crumb(("技术参数",))]
+    body.append('<div class="phead"><span class="pbadge" style="background:#5EEAD4">SPEC</span>'
+                '<div><h1>量子企业技术参数对比</h1>'
+                '<div class="pen">从企业公开发布中自动抽取 · 每条数值可点击核对原文</div></div></div>')
+    body.append(statbox([(n_with, "有参数企业"),
+                         (sum(1 for s in SPECS.values() if s.get("qubits") is not None), "披露比特数"),
+                         (sum(1 for s in SPECS.values() if s.get("logical_qubits") is not None), "披露逻辑比特"),
+                         (sum(1 for s in SPECS.values() if s.get("amounts")), "披露金额")]))
+    body.append('<div class="disclaim" style="margin-top:0;margin-bottom:6px">'
+                '参数由程序从企业公开发布的标题与摘要中自动抽取，只反映<strong>公开披露口径</strong>，'
+                '不同企业口径未必可比，也不代表实测性能。点击数值可跳转原文核对。</div>')
+
+    for track in sorted(by_track, key=lambda t: -len(by_track[t])):
+        rows = sorted(by_track[track], key=lambda r: -(r[2].get("qubits") or 0))
+        body.append('<div class="ph">%s · %d 家</div>' % (esc(track), len(rows)))
+        body.append('<div class="tblwrap"><table class="spectbl"><thead><tr>'
+                    '<th>企业</th><th>国家 / 地区</th><th>量子比特</th><th>逻辑比特</th>'
+                    '<th>保真度</th><th>最近披露金额</th></tr></thead><tbody>')
+        for name, c, sp in rows:
+            cy = CTRY.get(c["country"], [c["country"]])
+            amt = "—"
+            if sp.get("amounts"):
+                m = sp["amounts"][0]
+                amt = '<a href="%s" target="_blank" rel="noopener">%s</a>' % (
+                    esc(m["url"]), esc(fmt_money(m["value"], m["currency"])))
+            body.append('<tr><td><a href="company/%s.html"><b>%s</b></a></td><td>%s</td>'
+                        '<td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>'
+                        % (esc(c["slug"]), esc(name), esc(cy[0]),
+                           cell(sp, "qubits"), cell(sp, "logical_qubits"),
+                           cell(sp, "fidelity", "%"), amt))
+        body.append("</tbody></table></div>")
+
+    desc = "量子科技企业技术参数对比：量子比特数、逻辑比特、保真度与公开披露金额，每条数值可追溯到原文。"
+    ld = json.dumps({"@context": "https://schema.org", "@type": "Dataset",
+                     "name": "量子企业技术参数对比", "description": desc}, ensure_ascii=False)
+    out = TPL.format(title="量子企业技术参数对比 | Quantum Wire", desc=esc(desc),
+                     canonical="%s/specs.html" % base, ld=ld, body="".join(body))
+    with open(os.path.join(SITE, "specs.html"), "w", encoding="utf-8") as f:
+        f.write(out)
+    urls.append((base + "/specs.html", "0.9"))
 
     # ---------- sitemap / robots ----------
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d")
