@@ -107,336 +107,968 @@
    "color": "#5B8DEF",
    "track": "离子阱",
    "country": "US",
-   "city": "马里兰"
+   "city": "马里兰",
+   "slug": "ionq"
   },
   "Rigetti Computing": {
    "abbr": "RGTI",
    "color": "#F59E0B",
    "track": "超导",
    "country": "US",
-   "city": "加州"
+   "city": "加州",
+   "slug": "rgti"
   },
   "D-Wave Quantum": {
    "abbr": "QBTS",
    "color": "#F25A5A",
    "track": "量子退火",
    "country": "US",
-   "city": "加州"
+   "city": "加州",
+   "slug": "qbts"
   },
   "Quantum Computing Inc": {
    "abbr": "QUBT",
    "color": "#34D399",
    "track": "光量子",
    "country": "US",
-   "city": "新泽西"
+   "city": "新泽西",
+   "slug": "qubt"
   },
   "SEALSQ": {
    "abbr": "LAES",
    "color": "#4ADE80",
    "track": "后量子密码",
    "country": "CH",
-   "city": "日内瓦"
+   "city": "日内瓦",
+   "slug": "laes"
   },
   "Arqit Quantum": {
    "abbr": "ARQQ",
    "color": "#F25A5A",
    "track": "后量子密码",
    "country": "GB",
-   "city": "伦敦"
+   "city": "伦敦",
+   "slug": "arqq"
   },
   "IQM Quantum Computers": {
    "abbr": "IQM",
    "color": "#5EEAD4",
    "track": "超导",
    "country": "FI",
-   "city": "埃斯波"
+   "city": "埃斯波",
+   "slug": "iqm"
   },
   "Infleqtion": {
    "abbr": "INFQ",
    "color": "#60A5FA",
    "track": "中性原子",
    "country": "US",
-   "city": "科罗拉多"
+   "city": "科罗拉多",
+   "slug": "infq"
   },
   "Quantinuum": {
    "abbr": "QTNM",
    "color": "#C084FC",
    "track": "离子阱",
    "country": "GB",
-   "city": "剑桥"
+   "city": "剑桥",
+   "slug": "qtnm"
   },
   "Pasqal": {
    "abbr": "PASQ",
    "color": "#A78BFA",
    "track": "中性原子",
    "country": "FR",
-   "city": "马西"
+   "city": "马西",
+   "slug": "pasq"
   },
   "QuEra Computing": {
    "abbr": "QUERA",
    "color": "#22D3EE",
    "track": "中性原子",
    "country": "US",
-   "city": "波士顿"
+   "city": "波士顿",
+   "slug": "quera"
   },
   "PsiQuantum": {
    "abbr": "PSIQ",
    "color": "#818CF8",
    "track": "光量子",
    "country": "US",
-   "city": "加州"
+   "city": "加州",
+   "slug": "psiq"
   },
   "SandboxAQ": {
    "abbr": "SBAQ",
    "color": "#F472B6",
    "track": "后量子密码",
    "country": "US",
-   "city": "加州"
+   "city": "加州",
+   "slug": "sbaq"
   },
   "Xanadu": {
    "abbr": "XAN",
    "color": "#F472B6",
    "track": "光量子",
    "country": "CA",
-   "city": "多伦多"
+   "city": "多伦多",
+   "slug": "xan"
   },
   "IBM Quantum": {
    "abbr": "IBM",
    "color": "#38BDF8",
    "track": "超导",
    "country": "US",
-   "city": "纽约州"
+   "city": "纽约州",
+   "slug": "ibm"
   },
   "Google Quantum AI": {
    "abbr": "GOOGL",
    "color": "#FBBF24",
    "track": "超导",
    "country": "US",
-   "city": "加州"
+   "city": "加州",
+   "slug": "googl"
   },
   "Microsoft Quantum": {
    "abbr": "MSFT",
    "color": "#60A5FA",
    "track": "拓扑",
    "country": "US",
-   "city": "华盛顿州"
+   "city": "华盛顿州",
+   "slug": "msft"
   },
   "Quantum Machines": {
    "abbr": "QM",
    "color": "#818CF8",
    "track": "软件算法",
    "country": "IL",
-   "city": "特拉维夫"
+   "city": "特拉维夫",
+   "slug": "qm"
   },
   "Quandela": {
    "abbr": "QDEL",
    "color": "#38BDF8",
    "track": "光量子",
    "country": "FR",
-   "city": "马西"
+   "city": "马西",
+   "slug": "qdel"
   },
   "Alice & Bob": {
    "abbr": "AAB",
    "color": "#F472B6",
    "track": "超导",
    "country": "FR",
-   "city": "巴黎"
+   "city": "巴黎",
+   "slug": "aab"
   },
   "Oxford Ionics": {
    "abbr": "OXION",
    "color": "#22D3EE",
    "track": "离子阱",
    "country": "GB",
-   "city": "牛津"
+   "city": "牛津",
+   "slug": "oxion"
   },
   "ORCA Computing": {
    "abbr": "ORCA",
    "color": "#4ADE80",
    "track": "光量子",
    "country": "GB",
-   "city": "伦敦"
+   "city": "伦敦",
+   "slug": "orca"
   },
   "Silicon Quantum Computing": {
    "abbr": "SQC",
    "color": "#3CA87E",
    "track": "超导",
    "country": "AU",
-   "city": "悉尼"
+   "city": "悉尼",
+   "slug": "sqc"
   },
   "Quantum Brilliance": {
    "abbr": "QBR",
    "color": "#22D3EE",
    "track": "超导",
    "country": "AU",
-   "city": "堪培拉"
+   "city": "堪培拉",
+   "slug": "qbr"
   },
   "Diraq": {
    "abbr": "DIRAQ",
    "color": "#5B8DEF",
    "track": "超导",
    "country": "AU",
-   "city": "悉尼"
+   "city": "悉尼",
+   "slug": "diraq"
   },
   "Q-CTRL": {
    "abbr": "QCTRL",
    "color": "#A78BFA",
    "track": "软件算法",
    "country": "AU",
-   "city": "悉尼"
+   "city": "悉尼",
+   "slug": "qctrl"
   },
   "Classiq": {
    "abbr": "CLSQ",
    "color": "#5EEAD4",
    "track": "软件算法",
    "country": "IL",
-   "city": "特拉维夫"
+   "city": "特拉维夫",
+   "slug": "clsq"
   },
   "Fujitsu": {
    "abbr": "FJTS",
    "color": "#C2506E",
    "track": "超导",
    "country": "JP",
-   "city": "东京"
+   "city": "东京",
+   "slug": "fjts"
   },
   "NEC": {
    "abbr": "NEC",
    "color": "#4A7EC7",
    "track": "超导",
    "country": "JP",
-   "city": "东京"
+   "city": "东京",
+   "slug": "nec"
   },
   "Toshiba": {
    "abbr": "TOSH",
    "color": "#5B8DEF",
    "track": "后量子密码",
    "country": "JP",
-   "city": "东京"
+   "city": "东京",
+   "slug": "tosh"
   },
   "OptQC": {
    "abbr": "OPTQC",
    "color": "#4ADE80",
    "track": "光量子",
    "country": "JP",
-   "city": "东京"
+   "city": "东京",
+   "slug": "optqc"
   },
   "Jij": {
    "abbr": "JIJ",
    "color": "#FBBF24",
    "track": "软件算法",
    "country": "JP",
-   "city": "东京"
+   "city": "东京",
+   "slug": "jij"
   },
   "Samsung Electronics": {
    "abbr": "SMSN",
    "color": "#4A7EC7",
    "track": "超导",
    "country": "KR",
-   "city": "首尔"
+   "city": "首尔",
+   "slug": "smsn"
   },
   "SK Telecom": {
    "abbr": "SKT",
    "color": "#F59E0B",
    "track": "后量子密码",
    "country": "KR",
-   "city": "首尔"
+   "city": "首尔",
+   "slug": "skt"
   },
   "本源量子": {
    "abbr": "ORIGQ",
    "color": "#FB923C",
    "track": "超导",
    "country": "CN",
-   "city": "合肥"
+   "city": "合肥",
+   "slug": "origq"
   },
   "国盾量子": {
    "abbr": "CTEK",
    "color": "#4ADE80",
    "track": "后量子密码",
    "country": "CN",
-   "city": "合肥"
+   "city": "合肥",
+   "slug": "ctek"
   },
   "图灵量子": {
    "abbr": "TURQ",
    "color": "#38BDF8",
    "track": "光量子",
    "country": "CN",
-   "city": "上海"
+   "city": "上海",
+   "slug": "turq"
   },
   "玻色量子": {
    "abbr": "BOSON",
    "color": "#F472B6",
    "track": "光量子",
    "country": "CN",
-   "city": "北京"
+   "city": "北京",
+   "slug": "boson"
   },
   "Multiverse Computing": {
    "abbr": "MVC",
    "color": "#D98A3C",
    "track": "软件算法",
    "country": "ES",
-   "city": "圣塞巴斯蒂安"
+   "city": "圣塞巴斯蒂安",
+   "slug": "mvc"
   },
   "QuantWare": {
    "abbr": "QWARE",
    "color": "#F59E0B",
    "track": "超导",
    "country": "NL",
-   "city": "代尔夫特"
+   "city": "代尔夫特",
+   "slug": "qware"
   },
   "Qblox": {
    "abbr": "QBLOX",
    "color": "#22D3EE",
    "track": "软件算法",
    "country": "NL",
-   "city": "代尔夫特"
+   "city": "代尔夫特",
+   "slug": "qblox"
   },
   "planqc": {
    "abbr": "PLANQ",
    "color": "#5EEAD4",
    "track": "中性原子",
    "country": "DE",
-   "city": "慕尼黑"
+   "city": "慕尼黑",
+   "slug": "planq"
   },
   "AQT": {
    "abbr": "AQT",
    "color": "#C74B4B",
    "track": "离子阱",
    "country": "AT",
-   "city": "因斯布鲁克"
+   "city": "因斯布鲁克",
+   "slug": "aqt"
   },
   "ID Quantique": {
    "abbr": "IDQ",
    "color": "#C74B4B",
    "track": "后量子密码",
    "country": "CH",
-   "city": "日内瓦"
+   "city": "日内瓦",
+   "slug": "idq"
   },
   "Terra Quantum": {
    "abbr": "TERRA",
    "color": "#3CA87E",
    "track": "软件算法",
    "country": "CH",
-   "city": "圣加仑"
+   "city": "圣加仑",
+   "slug": "terra"
   },
   "Photonic Inc": {
    "abbr": "PHOT",
    "color": "#22D3EE",
    "track": "光量子",
    "country": "CA",
-   "city": "温哥华"
+   "city": "温哥华",
+   "slug": "phot"
   },
   "Anyon Systems": {
    "abbr": "ANYON",
    "color": "#5B8DEF",
    "track": "超导",
    "country": "CA",
-   "city": "蒙特利尔"
+   "city": "蒙特利尔",
+   "slug": "anyon"
   },
   "Nord Quantique": {
    "abbr": "NORDQ",
    "color": "#4ADE80",
    "track": "超导",
    "country": "CA",
-   "city": "舍布鲁克"
+   "city": "舍布鲁克",
+   "slug": "nordq"
+  },
+  "AWS Quantum": {
+   "abbr": "AWS",
+   "color": "#F59E0B",
+   "track": "超导",
+   "country": "US",
+   "city": "华盛顿州",
+   "slug": "aws"
+  },
+  "NVIDIA Quantum": {
+   "abbr": "NVDA",
+   "color": "#4ADE80",
+   "track": "软件算法",
+   "country": "US",
+   "city": "加州",
+   "slug": "nvda"
+  },
+  "Atom Computing": {
+   "abbr": "ATOM",
+   "color": "#A78BFA",
+   "track": "中性原子",
+   "country": "US",
+   "city": "加州",
+   "slug": "atom"
+  },
+  "SEEQC": {
+   "abbr": "SEEQC",
+   "color": "#5EEAD4",
+   "track": "超导",
+   "country": "US",
+   "city": "纽约州",
+   "slug": "seeqc"
+  },
+  "Qolab": {
+   "abbr": "QOLAB",
+   "color": "#94A3B8",
+   "track": "超导",
+   "country": "US",
+   "city": "加州",
+   "slug": "qolab"
+  },
+  "Strangeworks": {
+   "abbr": "STGW",
+   "color": "#C084FC",
+   "track": "软件算法",
+   "country": "US",
+   "city": "德州",
+   "slug": "stgw"
+  },
+  "QC Ware": {
+   "abbr": "QCW",
+   "color": "#38BDF8",
+   "track": "软件算法",
+   "country": "US",
+   "city": "加州",
+   "slug": "qcw"
+  },
+  "Zapata Quantum": {
+   "abbr": "ZPTA",
+   "color": "#FBBF24",
+   "track": "软件算法",
+   "country": "US",
+   "city": "波士顿",
+   "slug": "zpta"
+  },
+  "Qunnect": {
+   "abbr": "QUNN",
+   "color": "#22D3EE",
+   "track": "后量子密码",
+   "country": "US",
+   "city": "纽约",
+   "slug": "qunn"
+  },
+  "QuSecure": {
+   "abbr": "QSEC",
+   "color": "#4ADE80",
+   "track": "后量子密码",
+   "country": "US",
+   "city": "加州",
+   "slug": "qsec"
+  },
+  "Atlantic Quantum": {
+   "abbr": "ATQ",
+   "color": "#5B8DEF",
+   "track": "超导",
+   "country": "US",
+   "city": "波士顿",
+   "slug": "atq"
+  },
+  "Qrypt": {
+   "abbr": "QRYP",
+   "color": "#A78BFA",
+   "track": "后量子密码",
+   "country": "US",
+   "city": "纽约",
+   "slug": "qryp"
+  },
+  "Quantum Xchange": {
+   "abbr": "QXC",
+   "color": "#F472B6",
+   "track": "后量子密码",
+   "country": "US",
+   "city": "马里兰",
+   "slug": "qxc"
+  },
+  "华翊量子": {
+   "abbr": "HYQ",
+   "color": "#A78BFA",
+   "track": "离子阱",
+   "country": "CN",
+   "city": "北京",
+   "slug": "hyq"
+  },
+  "中科酷原": {
+   "abbr": "ZKKY",
+   "color": "#5EEAD4",
+   "track": "中性原子",
+   "country": "CN",
+   "city": "武汉",
+   "slug": "zkky"
+  },
+  "问天量子": {
+   "abbr": "WTQ",
+   "color": "#FBBF24",
+   "track": "后量子密码",
+   "country": "CN",
+   "city": "芜湖",
+   "slug": "wtq"
+  },
+  "启科量子": {
+   "abbr": "QIKE",
+   "color": "#60A5FA",
+   "track": "离子阱",
+   "country": "CN",
+   "city": "北京",
+   "slug": "qike"
+  },
+  "国仪量子": {
+   "abbr": "CIQTEK",
+   "color": "#94A3B8",
+   "track": "软件算法",
+   "country": "CN",
+   "city": "合肥",
+   "slug": "ciqtek"
+  },
+  "中电信量子集团": {
+   "abbr": "CTQL",
+   "color": "#3B6FD4",
+   "track": "后量子密码",
+   "country": "CN",
+   "city": "合肥",
+   "slug": "ctql"
+  },
+  "百度量子计算研究所": {
+   "abbr": "BAIDU",
+   "color": "#5B8DEF",
+   "track": "超导",
+   "country": "CN",
+   "city": "北京",
+   "slug": "baidu"
+  },
+  "腾讯量子实验室": {
+   "abbr": "TXQ",
+   "color": "#4ADE80",
+   "track": "软件算法",
+   "country": "CN",
+   "city": "深圳",
+   "slug": "txq"
+  },
+  "华为量子": {
+   "abbr": "HWQ",
+   "color": "#F25A5A",
+   "track": "超导",
+   "country": "CN",
+   "city": "深圳",
+   "slug": "hwq"
+  },
+  "量羲技术": {
+   "abbr": "LXQ",
+   "color": "#22D3EE",
+   "track": "软件算法",
+   "country": "CN",
+   "city": "合肥",
+   "slug": "lxq"
+  },
+  "中国电子科技集团": {
+   "abbr": "CETC",
+   "color": "#D64545",
+   "track": "后量子密码",
+   "country": "CN",
+   "city": "北京",
+   "slug": "cetc"
+  },
+  "合肥国家实验室": {
+   "abbr": "HFNL",
+   "color": "#818CF8",
+   "track": "超导",
+   "country": "CN",
+   "city": "合肥",
+   "slug": "hfnl"
+  },
+  "鸿海研究院": {
+   "abbr": "HHR",
+   "color": "#94A3B8",
+   "track": "超导",
+   "country": "TW",
+   "city": "新北",
+   "slug": "hhr"
+  },
+  "Oxford Quantum Circuits": {
+   "abbr": "OQC",
+   "color": "#5B8DEF",
+   "track": "超导",
+   "country": "GB",
+   "city": "牛津",
+   "slug": "oqc"
+  },
+  "Riverlane": {
+   "abbr": "RIVL",
+   "color": "#38BDF8",
+   "track": "软件算法",
+   "country": "GB",
+   "city": "剑桥",
+   "slug": "rivl"
+  },
+  "Phasecraft": {
+   "abbr": "PHSC",
+   "color": "#A78BFA",
+   "track": "软件算法",
+   "country": "GB",
+   "city": "布里斯托",
+   "slug": "phsc"
+  },
+  "KETS Quantum Security": {
+   "abbr": "KETS",
+   "color": "#F59E0B",
+   "track": "后量子密码",
+   "country": "GB",
+   "city": "布里斯托",
+   "slug": "kets"
+  },
+  "Nu Quantum": {
+   "abbr": "NUQ",
+   "color": "#F472B6",
+   "track": "后量子密码",
+   "country": "GB",
+   "city": "剑桥",
+   "slug": "nuq"
+  },
+  "quantumDice": {
+   "abbr": "QDICE",
+   "color": "#5EEAD4",
+   "track": "后量子密码",
+   "country": "GB",
+   "city": "牛津",
+   "slug": "qdice"
+  },
+  "Quantum Motion": {
+   "abbr": "QMOT",
+   "color": "#94A3B8",
+   "track": "超导",
+   "country": "GB",
+   "city": "伦敦",
+   "slug": "qmot"
+  },
+  "Universal Quantum": {
+   "abbr": "UNIQ",
+   "color": "#818CF8",
+   "track": "离子阱",
+   "country": "GB",
+   "city": "布莱顿",
+   "slug": "uniq"
+  },
+  "1QBit": {
+   "abbr": "1QBIT",
+   "color": "#A78BFA",
+   "track": "软件算法",
+   "country": "CA",
+   "city": "温哥华",
+   "slug": "1qbit"
+  },
+  "EvolutionQ": {
+   "abbr": "EVOQ",
+   "color": "#F59E0B",
+   "track": "后量子密码",
+   "country": "CA",
+   "city": "滑铁卢",
+   "slug": "evoq"
+  },
+  "SBQuantum": {
+   "abbr": "SBQ",
+   "color": "#94A3B8",
+   "track": "软件算法",
+   "country": "CA",
+   "city": "魁北克",
+   "slug": "sbq"
+  },
+  "C12 Quantum Electronics": {
+   "abbr": "C12",
+   "color": "#5EEAD4",
+   "track": "超导",
+   "country": "FR",
+   "city": "巴黎",
+   "slug": "c12"
+  },
+  "Cryptonext Security": {
+   "abbr": "CNXT",
+   "color": "#F25A5A",
+   "track": "后量子密码",
+   "country": "FR",
+   "city": "巴黎",
+   "slug": "cnxt"
+  },
+  "VeriQloud": {
+   "abbr": "VERIQ",
+   "color": "#818CF8",
+   "track": "后量子密码",
+   "country": "FR",
+   "city": "巴黎",
+   "slug": "veriq"
+  },
+  "Atos Quantum": {
+   "abbr": "ATOS",
+   "color": "#94A3B8",
+   "track": "软件算法",
+   "country": "FR",
+   "city": "巴黎",
+   "slug": "atos"
+  },
+  "eleQtron": {
+   "abbr": "ELEQ",
+   "color": "#5B8DEF",
+   "track": "离子阱",
+   "country": "DE",
+   "city": "锡根",
+   "slug": "eleq"
+  },
+  "Aqarios": {
+   "abbr": "AQAR",
+   "color": "#FBBF24",
+   "track": "软件算法",
+   "country": "DE",
+   "city": "慕尼黑",
+   "slug": "aqar"
+  },
+  "HQS Quantum Simulations": {
+   "abbr": "HQS",
+   "color": "#A78BFA",
+   "track": "软件算法",
+   "country": "DE",
+   "city": "卡尔斯鲁厄",
+   "slug": "hqs"
+  },
+  "Black Semiconductor": {
+   "abbr": "BLKS",
+   "color": "#64748B",
+   "track": "超导",
+   "country": "DE",
+   "city": "亚琛",
+   "slug": "blks"
+  },
+  "Qruise": {
+   "abbr": "QRUI",
+   "color": "#4ADE80",
+   "track": "软件算法",
+   "country": "DE",
+   "city": "亚琛",
+   "slug": "qrui"
+  },
+  "Bluefors": {
+   "abbr": "BLUE",
+   "color": "#38BDF8",
+   "track": "软件算法",
+   "country": "FI",
+   "city": "赫尔辛基",
+   "slug": "blue"
+  },
+  "SemiQon": {
+   "abbr": "SEMIQ",
+   "color": "#94A3B8",
+   "track": "超导",
+   "country": "FI",
+   "city": "埃斯波",
+   "slug": "semiq"
+  },
+  "QuiX Quantum": {
+   "abbr": "QUIX",
+   "color": "#F472B6",
+   "track": "光量子",
+   "country": "NL",
+   "city": "恩斯赫德",
+   "slug": "quix"
+  },
+  "OrangeQS": {
+   "abbr": "OQS",
+   "color": "#FB923C",
+   "track": "软件算法",
+   "country": "NL",
+   "city": "代尔夫特",
+   "slug": "oqs"
+  },
+  "Delft Circuits": {
+   "abbr": "DELFT",
+   "color": "#5B8DEF",
+   "track": "软件算法",
+   "country": "NL",
+   "city": "代尔夫特",
+   "slug": "delft"
+  },
+  "Single Quantum": {
+   "abbr": "SQNT",
+   "color": "#4ADE80",
+   "track": "光量子",
+   "country": "NL",
+   "city": "代尔夫特",
+   "slug": "sqnt"
+  },
+  "QphoX": {
+   "abbr": "QPHOX",
+   "color": "#A78BFA",
+   "track": "光量子",
+   "country": "NL",
+   "city": "代尔夫特",
+   "slug": "qphox"
+  },
+  "ParityQC": {
+   "abbr": "PARQ",
+   "color": "#818CF8",
+   "track": "软件算法",
+   "country": "AT",
+   "city": "因斯布鲁克",
+   "slug": "parq"
+  },
+  "Qnami": {
+   "abbr": "QNAMI",
+   "color": "#94A3B8",
+   "track": "软件算法",
+   "country": "CH",
+   "city": "巴塞尔",
+   "slug": "qnami"
+  },
+  "Qilimanjaro Quantum Tech": {
+   "abbr": "QILI",
+   "color": "#4ADE80",
+   "track": "超导",
+   "country": "ES",
+   "city": "巴塞罗那",
+   "slug": "qili"
+  },
+  "Kvantify": {
+   "abbr": "KVANT",
+   "color": "#C2504F",
+   "track": "软件算法",
+   "country": "DK",
+   "city": "哥本哈根",
+   "slug": "kvant"
+  },
+  "Sparrow Quantum": {
+   "abbr": "SPAR",
+   "color": "#38BDF8",
+   "track": "光量子",
+   "country": "DK",
+   "city": "哥本哈根",
+   "slug": "spar"
+  },
+  "NTT": {
+   "abbr": "NTT",
+   "color": "#94A3B8",
+   "track": "光量子",
+   "country": "JP",
+   "city": "东京",
+   "slug": "ntt"
+  },
+  "Quemix": {
+   "abbr": "QUEM",
+   "color": "#A78BFA",
+   "track": "软件算法",
+   "country": "JP",
+   "city": "东京",
+   "slug": "quem"
+  },
+  "Fixstars Amplify": {
+   "abbr": "FIXS",
+   "color": "#22D3EE",
+   "track": "量子退火",
+   "country": "JP",
+   "city": "东京",
+   "slug": "fixs"
+  },
+  "LG Electronics": {
+   "abbr": "LG",
+   "color": "#C2506E",
+   "track": "软件算法",
+   "country": "KR",
+   "city": "首尔",
+   "slug": "lg"
+  },
+  "KT": {
+   "abbr": "KT",
+   "color": "#94A3B8",
+   "track": "后量子密码",
+   "country": "KR",
+   "city": "首尔",
+   "slug": "kt"
+  },
+  "Horizon Quantum Computing": {
+   "abbr": "HQC",
+   "color": "#3CA89A",
+   "track": "软件算法",
+   "country": "SG",
+   "city": "新加坡",
+   "slug": "hqc"
+  },
+  "SpeQtral": {
+   "abbr": "SPEQ",
+   "color": "#5B8DEF",
+   "track": "后量子密码",
+   "country": "SG",
+   "city": "新加坡",
+   "slug": "speq"
+  },
+  "QpiAI": {
+   "abbr": "QPIAI",
+   "color": "#E08A4C",
+   "track": "软件算法",
+   "country": "IN",
+   "city": "班加罗尔",
+   "slug": "qpiai"
+  },
+  "BosonQ Psi": {
+   "abbr": "BQPSI",
+   "color": "#4ADE80",
+   "track": "软件算法",
+   "country": "IN",
+   "city": "班加罗尔",
+   "slug": "bqpsi"
+  },
+  "QNu Labs": {
+   "abbr": "QNU",
+   "color": "#F25A5A",
+   "track": "后量子密码",
+   "country": "IN",
+   "city": "班加罗尔",
+   "slug": "qnu"
+  },
+  "Qedma": {
+   "abbr": "QEDMA",
+   "color": "#F472B6",
+   "track": "软件算法",
+   "country": "IL",
+   "city": "特拉维夫",
+   "slug": "qedma"
+  },
+  "Quantum Source": {
+   "abbr": "QSRC",
+   "color": "#38BDF8",
+   "track": "光量子",
+   "country": "IL",
+   "city": "特拉维夫",
+   "slug": "qsrc"
+  },
+  "LightSolver": {
+   "abbr": "LTSV",
+   "color": "#FBBF24",
+   "track": "光量子",
+   "country": "IL",
+   "city": "特拉维夫",
+   "slug": "ltsv"
+  },
+  "Archer Materials": {
+   "abbr": "ARCH",
+   "color": "#94A3B8",
+   "track": "超导",
+   "country": "AU",
+   "city": "阿德莱德",
+   "slug": "arch"
+  },
+  "Pasqal Arabia": {
+   "abbr": "PASA",
+   "color": "#4A9E7E",
+   "track": "中性原子",
+   "country": "SA",
+   "city": "利雅得",
+   "slug": "pasa"
   }
  }
 }

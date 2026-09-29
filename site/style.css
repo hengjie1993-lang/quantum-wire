@@ -122,7 +122,7 @@ aside{position:sticky;top:86px;display:flex;flex-direction:column;gap:17px}
 .csec-h .en2{font-size:12px;color:var(--tx3);font-family:var(--mono)}
 .csec-h .cn2{margin-left:auto;font-size:12.5px;color:var(--tx3);font-variant-numeric:tabular-nums}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:12px}
-.ccard{background:var(--elev);border:1px solid var(--line);border-radius:14px;padding:16px;transition:.18s}
+.ccard{display:block;background:var(--elev);border:1px solid var(--line);border-radius:14px;padding:16px;transition:.18s}
 .ccard:hover{border-color:var(--ac);transform:translateY(-2px);box-shadow:var(--shadow)}
 .ccard .ch{display:flex;align-items:center;gap:10px;margin-bottom:11px}
 .ccard .ch i{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-size:11px;font-style:normal;font-weight:700;color:#fff;font-family:var(--mono);flex-shrink:0}
@@ -139,4 +139,35 @@ footer strong{color:var(--tx2);font-weight:600}
 .hidden{display:none!important}
 .empty{padding:56px 0;text-align:center;color:var(--tx3);font-size:14px}
 .loading{padding:80px 0;text-align:center;color:var(--tx3);font-size:14px}
-@media(max-width:940px){.layout{grid-template-columns:1fr}aside{position:static;order:-1}.hero h1{font-size:27px}nav.mainnav{display:none}.search{width:150px}.flabel{min-width:auto}}
+/* ---------- 档案页（企业 / 国家） ---------- */
+.crumb{font-size:12.5px;color:var(--tx3);padding:26px 0 18px}
+.crumb a{color:var(--tx2)}
+.crumb a:hover{color:var(--ac)}
+.crumb .sep{margin:0 8px;opacity:.45}
+.phead{display:flex;align-items:center;gap:16px;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:24px}
+.pbadge{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:14px;font-weight:700;color:#fff;font-family:var(--mono);flex-shrink:0}
+.phead h1{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.25}
+.phead .pen{font-size:13px;color:var(--tx3);margin-top:4px}
+.ph{font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--tx3);margin:32px 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.srcrow{display:flex;gap:8px;flex-wrap:wrap}
+.srcpill{font-size:12px;padding:4px 11px;border-radius:99px;background:var(--elev2);border:1px solid var(--line);color:var(--tx2)}
+.tl{list-style:none}
+.tl-i{display:flex;gap:18px;padding:14px 0;border-bottom:1px solid var(--line)}
+.tl-i:last-child{border-bottom:none}
+.tl-d{width:88px;flex-shrink:0;font-size:12.5px;color:var(--tx3);font-variant-numeric:tabular-nums;padding-top:2px}
+.tl-c{flex:1;min-width:0}
+.tl-t{font-size:14.5px;line-height:1.55;font-weight:500;margin-bottom:7px}
+.tl-t a:hover{color:var(--ac)}
+.tl-m{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.tl-tag{font-size:11px;padding:2px 8px;border-radius:5px;background:var(--elev3);color:var(--tx2);border:1px solid var(--line)}
+.tl-tag.t-official{background:rgba(94,234,212,.13);color:var(--ac);border-color:rgba(94,234,212,.3)}
+.tl-tag.t-media{color:var(--tx3)}
+.tl-src{font-size:11.5px;color:var(--tx3);margin-left:2px}
+.relgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(216px,1fr));gap:10px}
+.relcard{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--elev);transition:.16s}
+.relcard:hover{border-color:var(--ac);transform:translateY(-1px)}
+.relcard i{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-size:10px;font-style:normal;font-weight:700;color:#fff;font-family:var(--mono);flex-shrink:0}
+.relcard b{font-size:13.5px;font-weight:600;display:block;line-height:1.3}
+.relcard span{font-size:11px;color:var(--tx3);display:block}
+.disclaim{margin-top:34px;padding:15px 18px;border-radius:12px;background:var(--elev2);border:1px solid var(--line);font-size:12.5px;color:var(--tx3);line-height:1.7}
+@media(max-width:940px){.layout{grid-template-columns:1fr}aside{position:static;order:-1}.hero h1{font-size:27px}nav.mainnav{display:none}.search{width:150px}.flabel{min-width:auto}.phead h1{font-size:22px}.tl-i{flex-direction:column;gap:6px}.tl-d{width:auto}}

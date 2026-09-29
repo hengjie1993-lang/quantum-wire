@@ -19,21 +19,36 @@
 ```
 quantum-wire/
 ├─ scripts/collect.py            采集器（纯标准库，无第三方依赖）
-├─ .github/workflows/collect.yml 每天 UTC 03:00 / 15:00 自动跑
+├─ scripts/build.py              页面生成器：企业页 / 国家页 / sitemap / robots
+├─ docs/collect-workflow.yml     Actions 工作流（需手动放到 .github/workflows/）
 ├─ site/
-│  ├─ index.html                 单页站点
-│  ├─ app.js  style.css
+│  ├─ index.html  app.js  style.css
+│  ├─ company/{slug}.html        每家企业一个独立页（内容内嵌，可被索引）
+│  ├─ country/{CODE}.html        每个国家地区一个独立页
+│  ├─ sitemap.xml  robots.txt
 │  └─ data/items.json            采集结果（由 Actions 提交）
-│     data/companies.json        企业库 + 国家表
+│     data/companies.json        企业库 + 国家表 + slug
 └─ README.md
 ```
 
+## 页面结构：为什么要有独立页
+
+首页是 SPA，靠 JS 加载 JSON——搜索引擎抓不到内容。所以 `build.py` 把每家企业、
+每个国家地区渲染成**内容内嵌**的静态页：
+
+- `company/ionq.html` —— 企业档案 + 完整发布记录时间线 + 同技术路线相关企业
+- `country/CN.html` —— 该国企业清单 + 技术路线分布 + 最近发布
+
+这些页面有独立 URL、独立 title / description / canonical 和 JSON-LD，
+是搜索引擎真正能收录的落地页。当前规模：**121 个企业页 + 20 个国家页**。
+
 ## 本地运行
 
-采集一次：
+采集并重新生成页面：
 
 ```bash
 python scripts/collect.py --days 30
+python scripts/build.py --base https://your-domain.com   # 省略则用默认域名
 ```
 
 起本地服务预览站点（**不能直接双击 index.html**，因为要 fetch 本地 JSON）：

@@ -108,6 +108,94 @@ COMPANIES = {
     "Nord Quantique": ["NORDQ", "#4ADE80", "超导", "CA", "舍布鲁克", "nord quantique"],
 }
 
+# 第二批：档案库补全（尚未接入官网直抓，用于档案页与国家页收录）
+COMPANIES.update({
+    "AWS Quantum": ["AWS", "#F59E0B", "超导", "US", "华盛顿州", "aws quantum|amazon braket"],
+    "NVIDIA Quantum": ["NVDA", "#4ADE80", "软件算法", "US", "加州", "nvidia quantum|cuda quantum"],
+    "Atom Computing": ["ATOM", "#A78BFA", "中性原子", "US", "加州", "atom computing"],
+    "SEEQC": ["SEEQC", "#5EEAD4", "超导", "US", "纽约州", "seeqc"],
+    "Qolab": ["QOLAB", "#94A3B8", "超导", "US", "加州", "qolab"],
+    "Strangeworks": ["STGW", "#C084FC", "软件算法", "US", "德州", "strangeworks"],
+    "QC Ware": ["QCW", "#38BDF8", "软件算法", "US", "加州", "qc ware"],
+    "Zapata Quantum": ["ZPTA", "#FBBF24", "软件算法", "US", "波士顿", "zapata"],
+    "Qunnect": ["QUNN", "#22D3EE", "后量子密码", "US", "纽约", "qunnect"],
+    "QuSecure": ["QSEC", "#4ADE80", "后量子密码", "US", "加州", "qusecure"],
+    "Atlantic Quantum": ["ATQ", "#5B8DEF", "超导", "US", "波士顿", "atlantic quantum"],
+    "Qrypt": ["QRYP", "#A78BFA", "后量子密码", "US", "纽约", "qrypt"],
+    "Quantum Xchange": ["QXC", "#F472B6", "后量子密码", "US", "马里兰", "quantum xchange"],
+
+    "华翊量子": ["HYQ", "#A78BFA", "离子阱", "CN", "北京", "华翊"],
+    "中科酷原": ["ZKKY", "#5EEAD4", "中性原子", "CN", "武汉", "酷原"],
+    "问天量子": ["WTQ", "#FBBF24", "后量子密码", "CN", "芜湖", "问天量子"],
+    "启科量子": ["QIKE", "#60A5FA", "离子阱", "CN", "北京", "启科量子"],
+    "国仪量子": ["CIQTEK", "#94A3B8", "软件算法", "CN", "合肥", "国仪量子"],
+    "中电信量子集团": ["CTQL", "#3B6FD4", "后量子密码", "CN", "合肥", "中国电信量子|中电信量子"],
+    "百度量子计算研究所": ["BAIDU", "#5B8DEF", "超导", "CN", "北京", "百度量子"],
+    "腾讯量子实验室": ["TXQ", "#4ADE80", "软件算法", "CN", "深圳", "腾讯量子"],
+    "华为量子": ["HWQ", "#F25A5A", "超导", "CN", "深圳", "华为量子"],
+    "量羲技术": ["LXQ", "#22D3EE", "软件算法", "CN", "合肥", "量羲"],
+    "中国电子科技集团": ["CETC", "#D64545", "后量子密码", "CN", "北京", "中国电科|cetc"],
+    "合肥国家实验室": ["HFNL", "#818CF8", "超导", "CN", "合肥", "合肥国家实验室"],
+    "鸿海研究院": ["HHR", "#94A3B8", "超导", "TW", "新北", "鸿海研究院|hon hai"],
+
+    "Oxford Quantum Circuits": ["OQC", "#5B8DEF", "超导", "GB", "牛津", "oxford quantum circuits|oqc"],
+    "Riverlane": ["RIVL", "#38BDF8", "软件算法", "GB", "剑桥", "riverlane"],
+    "Phasecraft": ["PHSC", "#A78BFA", "软件算法", "GB", "布里斯托", "phasecraft"],
+    "KETS Quantum Security": ["KETS", "#F59E0B", "后量子密码", "GB", "布里斯托", "kets quantum"],
+    "Nu Quantum": ["NUQ", "#F472B6", "后量子密码", "GB", "剑桥", "nu quantum"],
+    "quantumDice": ["QDICE", "#5EEAD4", "后量子密码", "GB", "牛津", "quantumdice"],
+    "Quantum Motion": ["QMOT", "#94A3B8", "超导", "GB", "伦敦", "quantum motion"],
+    "Universal Quantum": ["UNIQ", "#818CF8", "离子阱", "GB", "布莱顿", "universal quantum"],
+
+    "1QBit": ["1QBIT", "#A78BFA", "软件算法", "CA", "温哥华", "1qbit"],
+    "EvolutionQ": ["EVOQ", "#F59E0B", "后量子密码", "CA", "滑铁卢", "evolutionq"],
+    "SBQuantum": ["SBQ", "#94A3B8", "软件算法", "CA", "魁北克", "sbquantum"],
+
+    "C12 Quantum Electronics": ["C12", "#5EEAD4", "超导", "FR", "巴黎", "c12 quantum"],
+    "Cryptonext Security": ["CNXT", "#F25A5A", "后量子密码", "FR", "巴黎", "cryptonext"],
+    "VeriQloud": ["VERIQ", "#818CF8", "后量子密码", "FR", "巴黎", "veriqloud"],
+    "Atos Quantum": ["ATOS", "#94A3B8", "软件算法", "FR", "巴黎", "atos quantum"],
+
+    "eleQtron": ["ELEQ", "#5B8DEF", "离子阱", "DE", "锡根", "eleqtron"],
+    "Aqarios": ["AQAR", "#FBBF24", "软件算法", "DE", "慕尼黑", "aqarios"],
+    "HQS Quantum Simulations": ["HQS", "#A78BFA", "软件算法", "DE", "卡尔斯鲁厄", "hqs quantum"],
+    "Black Semiconductor": ["BLKS", "#64748B", "超导", "DE", "亚琛", "black semiconductor"],
+    "Qruise": ["QRUI", "#4ADE80", "软件算法", "DE", "亚琛", "qruise"],
+
+    "Bluefors": ["BLUE", "#38BDF8", "软件算法", "FI", "赫尔辛基", "bluefors"],
+    "SemiQon": ["SEMIQ", "#94A3B8", "超导", "FI", "埃斯波", "semiqon"],
+
+    "QuiX Quantum": ["QUIX", "#F472B6", "光量子", "NL", "恩斯赫德", "quix quantum"],
+    "OrangeQS": ["OQS", "#FB923C", "软件算法", "NL", "代尔夫特", "orangeqs"],
+    "Delft Circuits": ["DELFT", "#5B8DEF", "软件算法", "NL", "代尔夫特", "delft circuits"],
+    "Single Quantum": ["SQNT", "#4ADE80", "光量子", "NL", "代尔夫特", "single quantum"],
+    "QphoX": ["QPHOX", "#A78BFA", "光量子", "NL", "代尔夫特", "qphox"],
+
+    "ParityQC": ["PARQ", "#818CF8", "软件算法", "AT", "因斯布鲁克", "parityqc"],
+    "Qnami": ["QNAMI", "#94A3B8", "软件算法", "CH", "巴塞尔", "qnami"],
+    "Qilimanjaro Quantum Tech": ["QILI", "#4ADE80", "超导", "ES", "巴塞罗那", "qilimanjaro"],
+    "Kvantify": ["KVANT", "#C2504F", "软件算法", "DK", "哥本哈根", "kvantify"],
+    "Sparrow Quantum": ["SPAR", "#38BDF8", "光量子", "DK", "哥本哈根", "sparrow quantum"],
+
+    "NTT": ["NTT", "#94A3B8", "光量子", "JP", "东京", "ntt"],
+    "Quemix": ["QUEM", "#A78BFA", "软件算法", "JP", "东京", "quemix"],
+    "Fixstars Amplify": ["FIXS", "#22D3EE", "量子退火", "JP", "东京", "fixstars"],
+    "LG Electronics": ["LG", "#C2506E", "软件算法", "KR", "首尔", "lg electronics"],
+    "KT": ["KT", "#94A3B8", "后量子密码", "KR", "首尔", "kt corp"],
+
+    "Horizon Quantum Computing": ["HQC", "#3CA89A", "软件算法", "SG", "新加坡", "horizon quantum"],
+    "SpeQtral": ["SPEQ", "#5B8DEF", "后量子密码", "SG", "新加坡", "speqtral"],
+    "QpiAI": ["QPIAI", "#E08A4C", "软件算法", "IN", "班加罗尔", "qpiai"],
+    "BosonQ Psi": ["BQPSI", "#4ADE80", "软件算法", "IN", "班加罗尔", "bosonq"],
+    "QNu Labs": ["QNU", "#F25A5A", "后量子密码", "IN", "班加罗尔", "qnu labs"],
+
+    "Qedma": ["QEDMA", "#F472B6", "软件算法", "IL", "特拉维夫", "qedma"],
+    "Quantum Source": ["QSRC", "#38BDF8", "光量子", "IL", "特拉维夫", "quantum source"],
+    "LightSolver": ["LTSV", "#FBBF24", "光量子", "IL", "特拉维夫", "lightsolver"],
+    "Archer Materials": ["ARCH", "#94A3B8", "超导", "AU", "阿德莱德", "archer materials"],
+    "Pasqal Arabia": ["PASA", "#4A9E7E", "中性原子", "SA", "利雅得", "pasqal arabia"],
+})
+
 # 上市公司：SEC EDGAR 用（ticker 由 company_tickers.json 动态解析 CIK）
 SEC_TICKERS = ["IONQ", "RGTI", "QBTS", "QUBT", "LAES", "ARQQ"]
 

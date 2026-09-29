@@ -29,11 +29,16 @@ jobs:
       - name: Run collector
         run: python scripts/collect.py --days ${{ github.event.inputs.days || '30' }}
 
-      - name: Commit updated data
+      - name: Build static pages
+        env:
+          QW_BASE: ${{ vars.SITE_BASE }}
+        run: python scripts/build.py
+
+      - name: Commit updated data and pages
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/data/items.json site/data/companies.json
+          git add site/data site/company site/country site/sitemap.xml site/robots.txt
           if git diff --staged --quiet; then
             echo "数据无变化，跳过提交"
           else

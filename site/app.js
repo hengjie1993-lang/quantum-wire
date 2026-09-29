@@ -174,15 +174,17 @@ function renderCompanies() {
     const cy = CTRY[k], list = by[k];
     h += '<section class="csec"><div class="csec-h">' +
       '<span class="cbadge" style="background:' + (cy ? cy[2] : "#888") + '">' + esc(k) + '</span>' +
-      '<div><b>' + esc(cy ? cy[0] : k) + '</b><div class="en2">' + esc(cy ? cy[1] : "") + '</div></div>' +
-      '<span class="cn2">' + list.length + ' 家</span></div><div class="grid">';
+      '<div><a href="country/' + esc(k) + '.html"><b>' + esc(cy ? cy[0] : k) + '</b></a>' +
+      '<div class="en2">' + esc(cy ? cy[1] : "") + '</div></div>' +
+      '<a class="cn2" href="country/' + esc(k) + '.html">' + list.length + ' 家 →</a></div><div class="grid">';
     list.forEach(kk => {
       const c = COMP[kk];
-      h += '<div class="ccard"><div class="ch"><i style="background:' + c.color + '">' + esc(c.abbr.slice(0, 2)) + '</i>' +
+      h += '<a class="ccard" href="company/' + esc(c.slug || "") + '.html"><div class="ch">' +
+        '<i style="background:' + c.color + '">' + esc(c.abbr.slice(0, 2)) + '</i>' +
         '<div><b>' + esc(kk) + '</b><span>' + esc(c.abbr) + '</span></div></div>' +
         '<div class="desc">' + esc(c.city) + '<br>' + esc(c.track) + '</div>' +
         '<div class="kv"><span>收录条目</span><b>' + (cnt[kk] || 0) + '</b></div>' +
-        '<div class="kv"><span>最近发布</span><b>' + esc(last[kk] || "—") + '</b></div></div>';
+        '<div class="kv"><span>最近发布</span><b>' + esc(last[kk] || "—") + '</b></div></a>';
     });
     h += '</div></section>';
   });
